@@ -1,28 +1,62 @@
-\documentclass[12pt, a4paper]{article}
+\documentclass[pdflatex,sn-mathphys-num]{sn-jnl}% Math and Physical Sciences Numbered Reference Style
+%%\documentclass[pdflatex,sn-nature]{sn-jnl}% Nature Portfolio
+%%\documentclass[pdflatex,sn-basic]{sn-jnl}% Basic Springer Nature / Chemistry
+%%\documentclass[pdflatex,sn-aps]{sn-jnl}% American Physical Society
+%%\documentclass[pdflatex,sn-vancouver-num]{sn-jnl}% Vancouver Numbered
 
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{amsmath, amssymb, amsthm}
-\usepackage{graphicx}
-\usepackage{hyperref}
-\usepackage[backend=biber, style=phys]{biblatex}
+\usepackage{graphicx}%
+\usepackage{multirow}%
+\usepackage{amsmath,amssymb,amsfonts}%
+\usepackage{amsthm}%
+\usepackage{mathrsfs}%
+\usepackage[title]{appendix}%
+\usepackage{xcolor}%
+\usepackage{textcomp}%
+\usepackage{manyfoot}%
+\usepackage{booktabs}%
 
-\addbibresource{bibliography/references.bib}
+\theoremstyle{thmstyleone}%
+\newtheorem{theorem}{Theorem}%
+\newtheorem{proposition}[theorem]{Proposition}%
 
-\title{}
-\author{}
-\date{}
+\theoremstyle{thmstyletwo}%
+\newtheorem{example}{Example}%
+\newtheorem{remark}{Remark}%
+
+\theoremstyle{thmstylethree}%
+\newtheorem{definition}{Definition}%
+
+\raggedbottom
 
 \begin{document}
 
+\title[Short Title]{Full Article Title}
+
+\author*[1]{\fnm{First} \sur{Author}}\email{author@institution.edu}
+
+\affil*[1]{\orgdiv{Department}, \orgname{Institution}, \orgaddress{\city{City}, \country{Country}}}
+
+\abstract{Abstract text goes here.}
+
+\keywords{keyword1, keyword2, keyword3}
+
 \maketitle
-
-\tableofcontents
-
-\newpage
 
 \input{sections/introduction}
 
-\printbibliography
+\backmatter
+
+\bmhead{Acknowledgements}
+
+\section*{Declarations}
+
+\begin{itemize}
+\item Funding:
+\item Conflict of interest:
+\item Data availability:
+\item Author contribution:
+\end{itemize}
+
+\bibliography{bibliography/references}
 
 \end{document}
